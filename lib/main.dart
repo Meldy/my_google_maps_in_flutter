@@ -8,7 +8,7 @@ class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
-//my api key is AIzaSyBC1EPXfpwVZr8XTP90xB5LN51w98qYdAM
+
 class _MyAppState extends State<MyApp> {
   late GoogleMapController mapController;
 
