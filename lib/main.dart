@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:google_maps_in_flutter/login_signup/first_page.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(Main());
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Main extends StatefulWidget {
+  const Main({Key? key}) : super(key: key);
+  //MaterialApp(
+  //debugShowCheckedModeBanner: false;
+  //)
   @override
-  _MyAppState createState() => _MyAppState();
+  _MainState createState() => _MainState();
 }
 //my api key is AIzaSyBC1EPXfpwVZr8XTP90xB5LN51w98qYdAM
-class _MyAppState extends State<MyApp> {
+class _MainState extends State<Main> {
   late GoogleMapController mapController;
 
   final LatLng _center = const LatLng(45.521563, -122.677433);
@@ -24,7 +28,7 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Maps Sample App'),
-          backgroundColor: Colors.green[700],
+          backgroundColor: Colors.blue[700],
         ),
         body: GoogleMap(
           onMapCreated: _onMapCreated,
@@ -32,8 +36,9 @@ class _MyAppState extends State<MyApp> {
             target: _center,
             zoom: 11.0,
           ),
-        ),
+           //edit from here
+
       ),
-    );
-  }
+    )
+    );}
 }
