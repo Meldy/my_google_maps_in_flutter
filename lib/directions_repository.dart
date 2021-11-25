@@ -11,7 +11,7 @@ class DirectionsRepository {
 
   DirectionsRepository({Dio dio}) : _dio = dio ?? Dio();
 
-  Future<Directions> getDirections({
+  Future<Directions?> getDirections({
     required LatLng origin,
     required LatLng destination,
   }) async {
@@ -20,7 +20,7 @@ class DirectionsRepository {
       queryParameters: {
         'origin': '${origin.latitude},${origin.longitude}',
         'destination': '${destination.latitude},${destination.longitude}',
-        'key': 'googleAPIKey',
+        'key': 'AIzaSyBC1EPXfpwVZr8XTP90xB5LN51w98qYdAM',
       },
     );
 

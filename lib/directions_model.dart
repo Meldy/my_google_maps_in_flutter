@@ -50,6 +50,9 @@ class Directions {
 }
 
 class PointLatLng {
+  double? get latitude => null;
+
+  double? get longitude => null;
 }
 
 class PolylinePoints {

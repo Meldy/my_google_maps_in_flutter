@@ -1,18 +1,17 @@
-/*
 import 'package:flutter/material.dart';
 import 'package:google_maps_in_flutter/directions_model.dart';
 import 'package:google_maps_in_flutter/directions_repository.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(new_main());
 }
 
-class MyApp extends StatelessWidget {
+class new_main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Google Maps',
+      title: 'Google Map',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.white,
@@ -47,6 +46,7 @@ class _MapScreenState extends State<MapScreen> {
   @override
   Widget build(BuildContext context) {
     var latitude;
+    double longitude;
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
@@ -169,10 +169,10 @@ class _MapScreenState extends State<MapScreen> {
           position: pos,
         );
         // Reset destination
-        _destination = null;
+        //_destination = null; I commented here
 
         // Reset info
-        _info = null;
+        //_info = null; I commented here
       });
     } else {
       // Origin is already set
@@ -189,7 +189,7 @@ class _MapScreenState extends State<MapScreen> {
       // Get directions
       final directions = await DirectionsRepository()
           .getDirections(origin: _origin.position, destination: pos);
-      setState(() => _info = directions);
+      setState(() => _info = directions!);
     }
   }
-}*/
+}
