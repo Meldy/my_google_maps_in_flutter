@@ -1,4 +1,5 @@
 //import 'package:dio/dio.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_in_flutter/directions_model.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -9,7 +10,7 @@ class DirectionsRepository {
 
   final Dio _dio;
 
-  DirectionsRepository({Dio dio}) : _dio = dio ?? Dio();
+  DirectionsRepository({required Dio dio}) : _dio = dio ?? Dio();
 
   Future<Directions?> getDirections({
     required LatLng origin,

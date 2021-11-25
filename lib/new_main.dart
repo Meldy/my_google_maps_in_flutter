@@ -187,7 +187,7 @@ class _MapScreenState extends State<MapScreen> {
       });
 
       // Get directions
-      final directions = await DirectionsRepository()
+      final directions = await DirectionsRepository(dio: null)
           .getDirections(origin: _origin.position, destination: pos);
       setState(() => _info = directions!);
     }
