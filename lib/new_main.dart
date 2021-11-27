@@ -45,8 +45,6 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var latitude;
-    double longitude;
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
@@ -107,7 +105,7 @@ class _MapScreenState extends State<MapScreen> {
                   color: Colors.red,
                   width: 5,
                   points: _info.polylinePoints
-                      .map((e) => LatLng(e.latitude, e.longitude))
+                      .map((e) => LatLng(e.latitude!, e.longitude!))
                       .toList(),
                 ),
             },
@@ -187,7 +185,7 @@ class _MapScreenState extends State<MapScreen> {
       });
 
       // Get directions
-      final directions = await DirectionsRepository(dio: null)
+      final directions = await DirectionsRepository(dio: null!)
           .getDirections(origin: _origin.position, destination: pos);
       setState(() => _info = directions!);
     }

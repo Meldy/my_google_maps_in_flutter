@@ -26,6 +26,9 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
+
+    #the location picker dependecies
+
 dependencies:
   flutter:
     sdk: flutter
@@ -38,9 +41,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_maps_flutter: ^2.1.0
 
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  location: ^4.3.0
+  #google_maps_flutter: ^2.0.6
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

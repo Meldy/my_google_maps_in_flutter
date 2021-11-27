@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_in_flutter/login_signup/first_page.dart';
@@ -5,7 +8,13 @@ import 'package:google_maps_in_flutter/login_signup/first_page.dart';
 void main() => runApp(Main());
 
 class Main extends StatefulWidget {
-  const Main({Key? key}) : super(key: key);
+  //const Main({Key? key}) : super(key: key);
+  Completer _controller = Completer();
+
+  static final CameraPosition _kGooglePlex = CameraPosition(
+    target: LatLng(17.385044, 78.486671),
+    zoom: 18,
+  );
   //MaterialApp(
   //debugShowCheckedModeBanner: false;
   //)
@@ -17,6 +26,8 @@ class _MainState extends State<Main> {
   late GoogleMapController mapController;
 
   final LatLng _center = const LatLng(45.521563, -122.677433);
+
+  var _kGooglePlex;
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -31,14 +42,22 @@ class _MainState extends State<Main> {
           backgroundColor: Colors.blue[700],
         ),
         body: GoogleMap(
-          onMapCreated: _onMapCreated,
-          initialCameraPosition: CameraPosition(
-            target: _center,
-            zoom: 11.0,
+          initialCameraPosition: _kGooglePlex,
+          onMapCreated: (GoogleMapController controller) {
+            _controller.complete(controller);
+          },
           ),
-           //edit from here
+
 
       ),
-    )
-    );}
+
+    );
+
+  }
 }
+
+class _controller {
+  static void complete(GoogleMapController controller) {}
+}
+
+
