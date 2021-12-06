@@ -89,7 +89,7 @@ class _MyAppState extends State<MyApp> {
         value: Mode.fullscreen,
       ),
     ],
-    onChanged: (m) {
+    onChanged: (m) async {
       setState(() {
         _mode = m;
       });
