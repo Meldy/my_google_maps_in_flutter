@@ -29,8 +29,8 @@ class _HomeState extends State<Home> {
   Set<Marker> markers = Set(); //markers for google map
   Map<PolylineId, Polyline> polylines = {}; //polylines to show direction
 
-  LatLng startLocation = LatLng(27.6683619, 85.3101895); //current location
-  LatLng endLocation = LatLng(27.6688312, 85.3077329); //autocompleted location
+  LatLng startLocation = LatLng(27.6683619, 85.3101895); //this should be the current location from src\location_search.dart
+  LatLng endLocation = LatLng(27.6688312, 85.3077329); //should be searched location from location_picker\current_location.dart
 
 
   @override
